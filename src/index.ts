@@ -4,6 +4,8 @@ import cors from "cors";
 import mongoose from "mongoose";
 import { MONGO_URL, PORT } from "./util/constants";
 import { createUser, getUserInfo, logUserIn } from "./routes/user-routes";
+import { addNewEvent } from "./db/events";
+import { createEvent, getAllEvents } from "./routes/event-routes";
 
 const app = express();
 app.use(
@@ -12,7 +14,7 @@ app.use(
     credentials: true,
   })
 );
-app.use(bodyParser.json());
+app.use(bodyParser.json({ limit: '50mb' }));
 
 //Endpoints
 
@@ -20,7 +22,9 @@ app.use(bodyParser.json());
 app.post("/addUser",createUser)
 app.post("/login",logUserIn)
 app.get("/getUserByEmail",getUserInfo);
-app.listen(PORT,"192.168.0.109", () => {
+app.post("/addNewEvent",createEvent);
+app.get("/getAllEvents",getAllEvents)
+app.listen(PORT,"192.168.0.127", () => {
   console.log("Server started on localhost:3000");
 });
 
