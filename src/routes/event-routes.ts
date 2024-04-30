@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { EventModel, addNewEvent, findEventById, getAll } from "../db/events";
+import { ComentariiModel, EventModel, addNewEvent, findEventById, getAll, updateComByID } from "../db/events";
 import { isRequestValid } from "../util/methods";
 import fs from "fs";
 import { getUserByEmail } from "../db/users";
@@ -14,6 +14,19 @@ type CreateEventRequest = {
   descriere: string;
   coordonate: number[];
 };
+type AddCommentRequest ={
+  eventId: string,
+    authorId: string,
+    author:string,
+    date: number,
+    message: string,
+}
+type PostComment = {
+  authorId: string,
+    author:string,
+    date: number,
+    message: string,
+}
 export const createEvent = async (req: Request, res: Response) => {
   const createEventRequest: CreateEventRequest = {
     creatorEmail: req.body.creatorEmail,
@@ -66,7 +79,7 @@ export const getAllEvents = async (req: Request, res: Response) => {
   } & EventModel;
 
   const allEvents = await getAll();
-  console.log(allEvents)
+  
   const eventsToSend: Array<EventToSend> = Array();
   for (let i = 0; i < allEvents.length; i++) {
     const event = allEvents[i];
@@ -117,4 +130,32 @@ const eventToAdd = {
 }
 res.json(eventToAdd);
 
+}
+export const addNewComment = async (req:Request, res:Response) =>{
+ const commentRequest : AddCommentRequest = {
+  eventId:req.body.eventId,
+  author:req.body.author,
+  authorId:req.body.authorId,
+  date:req.body.date,
+  message:req.body.message,
+  
+ }
+ 
+ if (!isRequestValid(commentRequest)) {
+  res
+    .status(400)
+    .send("Request object does not have all the correct properties");
+  return;
+}
+const commentToAdd: PostComment = {
+  authorId: commentRequest.authorId,
+  author: commentRequest.author,
+  date: commentRequest.date,
+  message: commentRequest.message,
+};
+const eventToAddCom = (await findEventById(commentRequest.eventId))!
+  const comments = eventToAddCom.comentarii;
+  comments.push(commentToAdd)
+  await updateComByID(commentRequest.eventId,comments)
+  res.json(eventToAddCom);
 }

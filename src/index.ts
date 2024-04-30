@@ -9,9 +9,11 @@ import {
   createUser,
   getUserInfo,
   logUserIn,
+  upgradeAcountType,
 } from "./routes/user-routes";
 import { addNewEvent } from "./db/events";
-import { createEvent, getAllEvents, getEventById } from "./routes/event-routes";
+import { addNewComment, createEvent, getAllEvents, getEventById } from "./routes/event-routes";
+import { accountUpgradeRequestAction, addRequest } from "./routes/request-routes";
 
 const app = express();
 app.use(
@@ -31,8 +33,8 @@ app.use(
   express.static(path.join(__dirname, "public", "eventImages"))
 );
 
-const profileImagesPath = "D:\\faculta\\AN3Sem2\\Licenta\\Licenta\\public\\profileImages";
-const nophotoPath = "D:\\faculta\\AN3Sem2\\Licenta\\Licenta\\public\\nophoto.png";
+const profileImagesPath = path.join(__dirname, "..", "public", "profileImages");
+const nophotoPath =path.join(profileImagesPath, "nophoto.png")
 
 app.use("/profileImages", (req, res, next) => {
   express.static(profileImagesPath)(req, res, (err) => {
@@ -47,7 +49,16 @@ app.post("/addNewEvent", createEvent);
 app.get("/getAllEvents", getAllEvents);
 app.put("/updateProfilePicture", changeProfilePicture);
 app.get("/getEventById",getEventById);
-app.listen(PORT, "192.168.0.127", () => {
+app.post("/addComent",addNewComment);
+app.post("/upgradeAcountType", upgradeAcountType)
+app.post("/addNewRequest",addRequest)
+app.post("/acceptAccountUpgrade",(req, res) =>
+  accountUpgradeRequestAction(req, res, "accept")
+);
+app.post("/rejectAccountUpgrade", (req, res) =>
+  accountUpgradeRequestAction(req, res, "reject")
+);
+app.listen(PORT, "192.168.1.8", () => {
   console.log("Server started on localhost:3000");
 });
 

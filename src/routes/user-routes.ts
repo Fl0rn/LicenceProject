@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { UserInfoModel, addNewUser, getUserByEmail, updateProfilePictureStatusByEmail } from "../db/users";
+import { UserInfoModel, addNewUser, getUserByEmail, updateAcountType, updateProfilePictureStatusById } from "../db/users";
 import { decryptPassword, isRequestValid } from "../util/methods";
 import fs from "fs";
 
@@ -16,7 +16,7 @@ type LogInRequest = {
   parola: string;
 };
 type ProfilePictureRequest ={
-  userEmail: string,
+  userId: string,
   base64Photo:string,
 }
 export const createUser = async (req: Request, res: Response) => {
@@ -35,12 +35,12 @@ export const createUser = async (req: Request, res: Response) => {
     return;
   }
   
-  const newUser:UserInfoModel = {...createUserRequest,hasProfilePicture:false}
-   await addNewUser(newUser);
+  const newUser:UserInfoModel = {...createUserRequest,acountType:0}
+   const userSaved = await addNewUser(newUser);
 
 
 
-  res.send("User added succesfully");
+  res.send(userSaved);
 };
 
 
@@ -56,7 +56,7 @@ export const logUserIn = async (req: Request, res: Response) => {
     return;
   }
   const currUser = await getUserByEmail(logInRequest.email);
-  
+ 
   if(!currUser){
     res.status(400).send("Nu exsita utilizator cu acest email");
     return;
@@ -83,11 +83,11 @@ export const getUserInfo = async (req:Request, res: Response) =>{
 }
 export const changeProfilePicture = async (req: Request, res: Response) => {
   const profilePictureRequest: ProfilePictureRequest = {
-    userEmail: req.body.userEmail,
+    userId: req.body.userId,
     base64Photo: req.body.base64Photo,
   };
 
-
+ 
   if (!isRequestValid(profilePictureRequest)) {
     res
       .status(400)
@@ -102,7 +102,7 @@ export const changeProfilePicture = async (req: Request, res: Response) => {
     ""
   );
   const buffer = Buffer.from(dataWithoutPrefix, "base64");
-  const filePath = `public/profileImages/${profilePictureRequest.userEmail}.jpg`;
+  const filePath = `public/profileImages/${profilePictureRequest.userId}.jpg`;
 
   fs.writeFile(filePath, buffer, (err) => {
     if (err) {
@@ -112,7 +112,19 @@ export const changeProfilePicture = async (req: Request, res: Response) => {
     }
   });
 
-  await updateProfilePictureStatusByEmail(profilePictureRequest.userEmail, true);
+  await updateProfilePictureStatusById(profilePictureRequest.userId, true);
   res.send("Profile picture changed succesfully");
 
 };
+export const upgradeAcountType = async (req:Request,res:Response) => {
+  const userId = req.body.userId;
+  console.log(userId)
+  if (!isRequestValid(userId)) {
+    res
+      .status(400)
+      .send("Request object does not have all the correct properties");
+    return;
+  }
+  await updateAcountType(userId);
+  res.send("You are now a creator")
+}

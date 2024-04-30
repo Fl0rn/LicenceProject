@@ -6,7 +6,7 @@ export interface UserInfoModel {
   cnp: string;
   oras: string;
   parola: string;
-  hasProfilePicture:boolean
+  acountType:number;
   
 }
 
@@ -14,8 +14,10 @@ const userInfoSchema = new mongoose.Schema({
   nume: { type: String, required: true },
   email: { type: String, required: true },
   cnp: { type: String, required: true },
+  oras:{type:String,required:true},
   parola: { type: String, required: true },
-  hasProfilePicture: {type:Boolean, required:true},
+  acountType: {type:Number,required:true},
+  
 });
 
 const User = mongoose.model("User", userInfoSchema);
@@ -32,12 +34,14 @@ export const addNewUser = async (userToAdd: UserInfoModel) => {
 export const getUserByEmail = (email: string) => {
   return User.findOne({ email: email });
 };
-
-export const updateProfilePictureStatusByEmail = async (email: string, status: boolean) => {
+export const findUserById = (id:string) => {
+return User.findOne({id:id})
+}
+export const updateProfilePictureStatusById = async (id: string, status: boolean) => {
   try {
    
     const updatedUser = await User.findOneAndUpdate(
-      { email }, 
+      { id }, 
       { $set: { hasProfilePicture: status } }, 
       { new: true, runValidators: true } 
     );
@@ -48,3 +52,4 @@ export const updateProfilePictureStatusByEmail = async (email: string, status: b
     throw error; 
   }
 }
+export const updateAcountType = (userId:string) => User.findByIdAndUpdate(userId,{acountType:1})
