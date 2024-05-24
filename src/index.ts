@@ -13,7 +13,8 @@ import {
 } from "./routes/user-routes";
 import { addNewEvent } from "./db/events";
 import { addNewComment, createEvent, getAllEvents, getEventById } from "./routes/event-routes";
-import { accountUpgradeRequestAction, addRequest } from "./routes/request-routes";
+import { accountUpgradeRequestAction, addRequest, getAccountUpgradeRequests } from "./routes/request-routes";
+import { createPlangere, getAllPlangeri, getPlangereById, updatePlangereStatus } from "./routes/plangeri-routes";
 
 const app = express();
 app.use(
@@ -31,6 +32,10 @@ app.use(express.static("public"));
 app.use(
   "/eventImages",
   express.static(path.join(__dirname, "public", "eventImages"))
+);
+app.use(
+  "/plangeriImages",
+  express.static(path.join(__dirname, "public", "plangeriImages"))
 );
 
 const profileImagesPath = path.join(__dirname, "..", "public", "profileImages");
@@ -58,7 +63,12 @@ app.post("/acceptAccountUpgrade",(req, res) =>
 app.post("/rejectAccountUpgrade", (req, res) =>
   accountUpgradeRequestAction(req, res, "reject")
 );
-app.listen(PORT, "192.168.1.8", () => {
+app.get("/getAllRequest",getAccountUpgradeRequests)
+app.post("/addNewPlangere",createPlangere)
+app.get("/getAllPlangeri",getAllPlangeri)
+app.get("/getPlangereById",getPlangereById)
+app.post("/updatePlangereStatus",updatePlangereStatus)
+app.listen(PORT, "192.168.0.127", () => {
   console.log("Server started on localhost:3000");
 });
 

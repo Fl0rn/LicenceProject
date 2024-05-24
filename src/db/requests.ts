@@ -27,5 +27,15 @@ export const findRequestById = async (requestId: string) =>
 
 
 export const updateRequestStatus = async (requestId:string,status:string) =>{
-  Request.findOneAndUpdate({acountId:requestId},{status:status})
+  await Request.findOneAndUpdate({ _id: requestId }, { status: status });
 }
+export const getRequestsForAccount = (accountId: string) =>
+  Request.find({ acountId: accountId }).sort({
+    date: "descending",
+  });
+
+export const getRequestsForTownHall = (city: string) =>
+  Request.find({
+    city: city,
+    status: "PENDING",
+  });

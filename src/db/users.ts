@@ -35,7 +35,7 @@ export const getUserByEmail = (email: string) => {
   return User.findOne({ email: email });
 };
 export const findUserById = (id:string) => {
-return User.findOne({id:id})
+return User.findOne({_id:id})
 }
 export const updateProfilePictureStatusById = async (id: string, status: boolean) => {
   try {

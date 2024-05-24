@@ -1,0 +1,45 @@
+Date : 2024-05-04 14:47:33
+Directory : d:\faculta\AN3Sem2\Licenta\Licenta
+Total : 13 files,  2889 codes, 92 comments, 93 blanks, all 3074 lines
+
+Languages
++--------------------+------------+------------+------------+------------+------------+
+| language           | files      | code       | comment    | blank      | total      |
++--------------------+------------+------------+------------+------------+------------+
+| JSON               |          3 |      2,280 |          0 |          2 |      2,282 |
+| TypeScript         |          9 |        598 |          2 |         81 |        681 |
+| JSON with Comments |          1 |         11 |         90 |         10 |        111 |
++--------------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                            | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                               |         13 |      2,889 |         92 |         93 |      3,074 |
+| . (Files)                                                       |          4 |      2,291 |         90 |         12 |      2,393 |
+| src                                                             |          9 |        598 |          2 |         81 |        681 |
+| src (Files)                                                     |          1 |         60 |          1 |          8 |         69 |
+| src\db                                                          |          3 |        129 |          0 |         19 |        148 |
+| src\routes                                                      |          3 |        388 |          1 |         51 |        440 |
+| src\util                                                        |          2 |         21 |          0 |          3 |         24 |
++-----------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| filename                                                        | language           | code       | comment    | blank      | total      |
++-----------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| d:\faculta\AN3Sem2\Licenta\Licenta\nodemon.json                 | JSON               |          5 |          0 |          0 |          5 |
+| d:\faculta\AN3Sem2\Licenta\Licenta\package-lock.json            | JSON               |      2,241 |          0 |          1 |      2,242 |
+| d:\faculta\AN3Sem2\Licenta\Licenta\package.json                 | JSON               |         34 |          0 |          1 |         35 |
+| d:\faculta\AN3Sem2\Licenta\Licenta\src\db\events.ts             | TypeScript         |         50 |          0 |          2 |         52 |
+| d:\faculta\AN3Sem2\Licenta\Licenta\src\db\requests.ts           | TypeScript         |         34 |          0 |          7 |         41 |
+| d:\faculta\AN3Sem2\Licenta\Licenta\src\db\users.ts              | TypeScript         |         45 |          0 |         10 |         55 |
+| d:\faculta\AN3Sem2\Licenta\Licenta\src\index.ts                 | TypeScript         |         60 |          1 |          8 |         69 |
+| d:\faculta\AN3Sem2\Licenta\Licenta\src\routes\event-routes.ts   | TypeScript         |        147 |          1 |         13 |        161 |
+| d:\faculta\AN3Sem2\Licenta\Licenta\src\routes\request-routes.ts | TypeScript         |        134 |          0 |         15 |        149 |
+| d:\faculta\AN3Sem2\Licenta\Licenta\src\routes\user-routes.ts    | TypeScript         |        107 |          0 |         23 |        130 |
+| d:\faculta\AN3Sem2\Licenta\Licenta\src\util\constants.ts        | TypeScript         |          2 |          0 |          0 |          2 |
+| d:\faculta\AN3Sem2\Licenta\Licenta\src\util\methods.ts          | TypeScript         |         19 |          0 |          3 |         22 |
+| d:\faculta\AN3Sem2\Licenta\Licenta\tsconfig.json                | JSON with Comments |         11 |         90 |         10 |        111 |
+| Total                                                           |                    |      2,889 |         92 |         93 |      3,074 |
++-----------------------------------------------------------------+--------------------+------------+------------+------------+------------+

@@ -118,7 +118,7 @@ export const changeProfilePicture = async (req: Request, res: Response) => {
 };
 export const upgradeAcountType = async (req:Request,res:Response) => {
   const userId = req.body.userId;
-  console.log(userId)
+  
   if (!isRequestValid(userId)) {
     res
       .status(400)
