@@ -49,3 +49,18 @@ export const updateComByID = (
   eventId: string,
   comments: Array<ComentariiModel>
 ) => Event.findByIdAndUpdate(eventId, { comentarii: comments });
+
+export const addParticipant = (id: String, participanti: string[]) =>
+  Event.findByIdAndUpdate(id, { participanti: participanti });
+
+export async function searchEvents(searchQuery: string) {
+  if (searchQuery.length === 0) return [];
+
+  const results = await Event.find({
+    titlu: { $regex: searchQuery, $options: "i" },
+  });
+
+  
+
+  return results;
+}

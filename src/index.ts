@@ -12,7 +12,7 @@ import {
   upgradeAcountType,
 } from "./routes/user-routes";
 import { addNewEvent } from "./db/events";
-import { addNewComment, createEvent, getAllEvents, getEventById } from "./routes/event-routes";
+import { addNewComment, addNewParticipant, createEvent, deleteParticipant, getAllEvents, getEventById, getRecomendedEvents, searchedEvents } from "./routes/event-routes";
 import { accountUpgradeRequestAction, addRequest, getAccountUpgradeRequests } from "./routes/request-routes";
 import { createPlangere, getAllPlangeri, getPlangereById, updatePlangereStatus } from "./routes/plangeri-routes";
 
@@ -68,6 +68,10 @@ app.post("/addNewPlangere",createPlangere)
 app.get("/getAllPlangeri",getAllPlangeri)
 app.get("/getPlangereById",getPlangereById)
 app.post("/updatePlangereStatus",updatePlangereStatus)
+app.post("/addParicipant",addNewParticipant)
+app.post("/deleteParticipant",deleteParticipant)
+app.get("/getSearchedEvents",searchedEvents)
+app.get("/getRecomandedEvents",getRecomendedEvents)
 app.listen(PORT, "192.168.0.127", () => {
   console.log("Server started on localhost:3000");
 });

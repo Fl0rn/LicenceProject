@@ -1,0 +1,42 @@
+Date : 2024-06-21 13:13:23
+Directory : d:\faculta\AN3Sem2\Licenta\Licenta
+Total : 11 files,  429 codes, 0 comments, 44 blanks, all 473 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| TypeScript |          9 |        331 |          0 |         44 |        375 |
+| JSON       |          2 |         98 |          0 |          0 |         98 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                             | files      | code       | comment    | blank      | total      |
++------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                |         11 |        429 |          0 |         44 |        473 |
+| . (Files)                                                        |          2 |         98 |          0 |          0 |         98 |
+| src                                                              |          9 |        331 |          0 |         44 |        375 |
+| src (Files)                                                      |          1 |         12 |          0 |          0 |         12 |
+| src\db                                                           |          3 |         54 |          0 |          4 |         58 |
+| src\routes                                                       |          3 |        242 |          0 |         38 |        280 |
+| src\util                                                         |          2 |         23 |          0 |          2 |         25 |
++------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                         | language   | code       | comment    | blank      | total      |
++------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| d:\faculta\AN3Sem2\Licenta\Licenta\package-lock.json             | JSON       |         95 |          0 |          0 |         95 |
+| d:\faculta\AN3Sem2\Licenta\Licenta\package.json                  | JSON       |          3 |          0 |          0 |          3 |
+| d:\faculta\AN3Sem2\Licenta\Licenta\src\db\events.ts              | TypeScript |          9 |          0 |          5 |         14 |
+| d:\faculta\AN3Sem2\Licenta\Licenta\src\db\plangeri.ts            | TypeScript |         37 |          0 |          3 |         40 |
+| d:\faculta\AN3Sem2\Licenta\Licenta\src\db\users.ts               | TypeScript |          8 |          0 |         -4 |          4 |
+| d:\faculta\AN3Sem2\Licenta\Licenta\src\index.ts                  | TypeScript |         12 |          0 |          0 |         12 |
+| d:\faculta\AN3Sem2\Licenta\Licenta\src\routes\event-routes.ts    | TypeScript |        117 |          0 |         16 |        133 |
+| d:\faculta\AN3Sem2\Licenta\Licenta\src\routes\plangeri-routes.ts | TypeScript |        129 |          0 |         18 |        147 |
+| d:\faculta\AN3Sem2\Licenta\Licenta\src\routes\request-routes.ts  | TypeScript |         -4 |          0 |          4 |          0 |
+| d:\faculta\AN3Sem2\Licenta\Licenta\src\util\constants.ts         | TypeScript |          1 |          0 |          0 |          1 |
+| d:\faculta\AN3Sem2\Licenta\Licenta\src\util\methods.ts           | TypeScript |         22 |          0 |          2 |         24 |
+| Total                                                            |            |        429 |          0 |         44 |        473 |
++------------------------------------------------------------------+------------+------------+------------+------------+------------+

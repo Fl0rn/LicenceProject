@@ -1,0 +1,17 @@
+"filename", "language", "JSON", "JSON with Comments", "TypeScript", "comment", "blank", "total"
+"d:\faculta\AN3Sem2\Licenta\Licenta\nodemon.json", "JSON", 5, 0, 0, 0, 0, 5
+"d:\faculta\AN3Sem2\Licenta\Licenta\package-lock.json", "JSON", 2336, 0, 0, 0, 1, 2337
+"d:\faculta\AN3Sem2\Licenta\Licenta\package.json", "JSON", 37, 0, 0, 0, 1, 38
+"d:\faculta\AN3Sem2\Licenta\Licenta\src\db\events.ts", "TypeScript", 0, 0, 59, 0, 7, 66
+"d:\faculta\AN3Sem2\Licenta\Licenta\src\db\plangeri.ts", "TypeScript", 0, 0, 37, 0, 3, 40
+"d:\faculta\AN3Sem2\Licenta\Licenta\src\db\requests.ts", "TypeScript", 0, 0, 34, 0, 7, 41
+"d:\faculta\AN3Sem2\Licenta\Licenta\src\db\users.ts", "TypeScript", 0, 0, 53, 0, 6, 59
+"d:\faculta\AN3Sem2\Licenta\Licenta\src\index.ts", "TypeScript", 0, 0, 72, 1, 8, 81
+"d:\faculta\AN3Sem2\Licenta\Licenta\src\routes\event-routes.ts", "TypeScript", 0, 0, 264, 1, 29, 294
+"d:\faculta\AN3Sem2\Licenta\Licenta\src\routes\plangeri-routes.ts", "TypeScript", 0, 0, 129, 0, 18, 147
+"d:\faculta\AN3Sem2\Licenta\Licenta\src\routes\request-routes.ts", "TypeScript", 0, 0, 130, 0, 19, 149
+"d:\faculta\AN3Sem2\Licenta\Licenta\src\routes\user-routes.ts", "TypeScript", 0, 0, 107, 0, 23, 130
+"d:\faculta\AN3Sem2\Licenta\Licenta\src\util\constants.ts", "TypeScript", 0, 0, 3, 0, 0, 3
+"d:\faculta\AN3Sem2\Licenta\Licenta\src\util\methods.ts", "TypeScript", 0, 0, 41, 0, 5, 46
+"d:\faculta\AN3Sem2\Licenta\Licenta\tsconfig.json", "JSON with Comments", 0, 11, 0, 90, 10, 111
+"Total", "-", 2378, 11, 929, 92, 137, 3547

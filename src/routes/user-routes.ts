@@ -35,7 +35,7 @@ export const createUser = async (req: Request, res: Response) => {
     return;
   }
   
-  const newUser:UserInfoModel = {...createUserRequest,acountType:0}
+  const newUser:UserInfoModel = {...createUserRequest,acountType:0,savedEvents:[""]}
    const userSaved = await addNewUser(newUser);
 
 
